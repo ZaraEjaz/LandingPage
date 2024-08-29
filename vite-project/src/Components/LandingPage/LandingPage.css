@@ -1,0 +1,164 @@
+/* LandingPage.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('/images/Group 101848.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+  }
+  
+  .landing-page {
+    text-align: center;
+    color: #333;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    position: fixed; /* Keep navbar fixed at the top */
+    top: 0;
+    width: 100%;
+    background: transparent; /* Transparent background */
+    box-sizing: border-box; /* Include padding in the element’s total width and height */
+    max-width: 1200px; /* Max width for the navbar */
+    margin: 0 auto; /* Center the navbar */
+  }
+  
+  .navbar .logo {
+    height: 25px; /* Adjust the logo size to be smaller */
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center; /* Vertically center the menu items */
+    margin-left: auto; /* Push nav links to the right */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: black; /* Text color for the menu options */
+    font-weight: bold;
+    position: relative;
+    padding: 0.5rem; /* Add some padding for better touch targets */
+  }
+  
+  /* Underline effect */
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: red;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  /* Initial red underline on the first menu option */
+  .nav-links a:first-of-type::after {
+    transform: scaleX(1);
+  }
+  
+  .menu-toggle {
+    display: none; /* Hide the menu toggle button initially */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles for the navbar */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem; /* Adjust padding for smaller screens */
+    }
+  
+    .nav-links {
+      display: none; /* Hide menu options on small screens */
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      position: absolute;
+      top: 60px; /* Adjust based on navbar height */
+      left: 0;
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the menu */
+      align-items: center; /* Center items horizontally */
+      padding: 1rem;
+      box-sizing: border-box; /* Include padding in the element’s total width */
+    }
+  
+    .nav-links.menu-active {
+      display: flex; /* Show menu when active */
+    }
+  
+    .menu-toggle {
+      display: block; /* Show menu toggle button */
+    }
+  }
+  @media (max-width: 320px) {
+    .navbar {
+        padding: 1rem; /* Adjust padding for smaller screens */
+      }
+      .navbar .logo {
+        height: 20px; /* Adjust the logo size to be smaller */
+        margin-left: 2px;
+      }
+      .main-content {
+        margin-top:10%; /* Adjust for navbar height */
+      }
+      .main-heading {
+        font-size: 1.25rem;
+      }
+  }
+  /* Centered Heading */
+.main-content {
+    display: flex;
+    flex-direction: column; /* Stack heading lines vertically */
+    justify-content: center;
+    align-items: center;
+    margin-top: 9.55%; /* Adjust for navbar height */
+    text-align: center; /* Center text within the div */
+    padding: 0 1rem; /* Add some padding for better alignment */
+  }
+  
+  .main-heading {
+    font-size: 3.7pc;
+    color: rgb(0, 0, 0); /* Adjust text color as needed */
+    margin: 0;
+  }
+  /* Responsive Heading */
+@media (max-width: 768px) {
+    .main-heading {
+      font-size: 1.5rem; /* Smaller font size for medium screens */
+    }
+    .main-content{
+        margin-top: 20%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-heading {
+      font-size: 1.2rem; /* Smaller font size for small screens */
+    }
+    .main-content{
+        margin-top: 20%;
+    }
+  }
+  .search-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    width: 100%; /* Ensure it takes full width to align centrally */
+    margin-top: 2rem; /* Space from heading */
+    position: relative;
+    z-index: 1;
+  }
