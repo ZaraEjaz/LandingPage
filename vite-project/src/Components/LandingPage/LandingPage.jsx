@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './LandingPage.css';
 import SearchBar from '../SearchBar/SearchBar';
-
+import Btn from '../Button/Btn';
 const LandingPage = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -31,6 +31,11 @@ const LandingPage = () => {
 
       <div className="search-container">
         <SearchBar />
+      </div>
+      <Btn/>
+
+      <div className="info-text">
+        <p>Price comparison helps you save 100s of pounds on online shopping. Start by searching for the product you want to buy and see what's the cheapest price available online.</p>
       </div>
     </div>
   );

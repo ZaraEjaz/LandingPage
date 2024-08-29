@@ -1,13 +1,13 @@
+/* SearchBar.css */
 .search-container {
-    display: flex;
     justify-content: center; /* Center horizontally */
     width: 100%; /* Ensure it takes full width to align centrally */
     margin-top: 1rem; /* Space from heading */
     position: relative;
-    z-index: 1;
   }
   
   .searchBox {
+    margin-bottom: 50px;
     display: flex;
     align-items: center;
     width: 100%; /* Allow searchBox to take full width */
@@ -15,11 +15,6 @@
     background: white;
     border-radius: 50px;
     padding: 8px; /* Add padding to ensure content isn't touching the edges */
-
-  }
-  
-  .searchIcon {
-    margin-right: 8px; /* Space between the icon and the input */
   }
   
   .searchInput {
@@ -28,7 +23,7 @@
     outline: none;
     color: black; /* Change to black for better contrast on white background */
     font-size: 15px;
-    padding: 12px; /* Adjust padding for better alignment */
+    padding: 9px; /* Adjust padding for better alignment */
     flex: 1; /* Allow input to take available space */
   }
   
@@ -44,6 +39,7 @@
     justify-content: center;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
     flex-shrink: 0; /* Prevent button from shrinking */
+    margin-left: 8px; /* Add margin to the left to ensure spacing from input */
   }
   
   /* Hover effect */
