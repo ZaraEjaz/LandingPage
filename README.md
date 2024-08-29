@@ -18,36 +18,6 @@ You can view the live landing page by visiting the following link:
 - React
 - JavaScript
 
-## Installation
-
-To run this project locally, follow these steps:
-
-1. **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/your-username/your-repository-name.git
-    ```
-
-2. **Navigate to the project directory:**
-
-    ```bash
-    cd your-repository-name
-    ```
-
-3. **Install dependencies:**
-
-    ```bash
-    npm install
-    ```
-
-4. **Start the development server:**
-
-    ```bash
-    npm start
-    ```
-
-    The app will be running at [http://localhost:3000](http://localhost:3000).
-
 ## Usage
 
 - **Navigation**: Use the fixed navigation bar to explore different sections of the page.
