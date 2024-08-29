@@ -15,7 +15,7 @@ body {
     flex-wrap: wrap;
     text-align: center;
     color: #333;
-    padding: 2rem;
+    padding: 1rem;
   }
   
   .column {
@@ -74,7 +74,13 @@ body {
   .navbar .logo {
     height: 25px;
   }
-  
+  .sell-btn{
+    background-color: #c21f5b;
+    border-radius: 20px;
+    color: whitesmoke!important;
+    font-weight: lighter;
+  }
+
   .nav-links {
     display: flex;
     gap: 1rem;
@@ -109,7 +115,7 @@ body {
   
   .menu-toggle {
     display: none;
-    background-color: #007bff;
+    background-color: #c21f5b;
     color: white;
     border: none;
     padding: 0.5rem;
@@ -117,53 +123,106 @@ body {
     cursor: pointer;
   }
   
-  @media (max-width: 768px) {
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
     .navbar {
-      padding: 1rem;
+        padding: 1rem;
     }
-  
+
     .nav-links {
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background: rgba(0, 0, 0, 0.7);
-      align-items: center;
-      padding: 1rem;
-      box-sizing: border-box;
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.7);
+        align-items: center;
+        padding: 1rem;
+        box-sizing: border-box;
     }
-  
+
     .nav-links.menu-active {
-      display: flex;
+        display: flex;
     }
-  
+
     .menu-toggle {
-      display: block;
+        display: block;
     }
-  
+
     .landing-page {
-      flex-direction: column; /* Stack columns vertically on smaller screens */
+        flex-direction: column; /* Stack columns vertically on smaller screens */
     }
-  
+
     .column {
-      max-width: 100%; /* Allow full width for each column */
+        max-width: 100%; /* Allow full width for each column */
     }
-  
+
     .main-content {
-      margin-top: 20%;
+        margin-top: 20%;
     }
-  }
-  
-  @media (max-width: 480px) {
+
+    /* Reduce image sizes for smaller screens */
+    
+    .right-image {
+        height: 100px; /* Reduce height */
+        margin-right: -10px; /* Remove margins to ensure images stay at the edges */
+    }
+    .left-image{
+        margin-left: -10px; /* Remove margins to ensure images stay at the edges */
+        height:100px;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo{
+        margin-left: 20px;
+    }
     .main-heading {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  
+
     .main-content {
-      margin-top: 20%;
+        margin-top: 20%;
     }
+
+    /* Further reduce image sizes for very small screens */
+    .right-image {
+        height: 100px; /* Reduce height */
+        margin-right: -10px; /* Remove margins to ensure images stay at the edges */
+    }
+    .left-image{
+        margin-left: -100px; /* Remove margins to ensure images stay at the edges */
+        height: 100px; 
+    }
+}
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: -10px;
+    width: auto; /* Allow the footer to have auto width */
+    height: 100px; /* Set height based on content */
+    background-color: white; /* Background color for footer */
+    border-top-right-radius: 50px; /* Curved top right edge */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    z-index: 1000!important; /* Ensure footer is above other content */
+    padding: 10px; /* Padding around the content */
+    transform: skew(20deg);
   }
   
+  .footer-image {
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 90%; /* Make image width 100% of footer */
+    height: auto; /* Maintain aspect ratio */
+    border-top-right-radius: 50px; /* Match footer's curve */
+    object-fit: cover; /* Ensure image covers the footer area */
+  }
+  
+  /* Adjustments for footer image */
+  .footer img {
+    display: block;
+    max-width: 100%;
+    border-top-right-radius: 50px; /* Curved corner for the image as well */
+  }

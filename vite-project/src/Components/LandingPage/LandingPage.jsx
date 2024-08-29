@@ -55,6 +55,14 @@ const LandingPage = () => {
         </div>
       </div>
 
+        {/* Footer */}
+        <div className='cover'>
+
+      <footer className="footer">
+          <img src="./images/Group 10249.png" alt="Footer Image" className="footer-image" />
+      </footer>
+      </div>
+
     </div>
     </div>
   );
