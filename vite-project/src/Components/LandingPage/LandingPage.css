@@ -1,7 +1,7 @@
 /* LandingPage.css */
 
 body {
-    margin-top: 0;
+    margin: 0;
     padding: 0;
     background: url('/images/Group 101848.png') no-repeat center center fixed;
     background-size: cover;
@@ -9,43 +9,87 @@ body {
   }
   
   .landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     text-align: center;
     color: #333;
+    padding: 2rem;
+  }
+  
+  .column {
+    flex: 1; /* Flex to take equal space */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    max-width: 30.33%; /* One-third width */
+    padding: 1rem;
+    box-sizing: border-box; /* Include padding in the element’s total width and height */
+  }
+  
+  .right-image {
+    height: 600px;
+    margin-right: -350px;
+  }
+  .left-image{
+    height: 600px;
+    margin-left: -300px;
+  }
+  
+  .center-column {
+    text-align: center;
+    max-width: 700px; /* Limit max-width */
+    width: 100%; /* Allow full width */
+    padding: 1rem; /* Add padding for spacing */
+  }
+  
+  .main-heading {
+    margin: 1rem 0;
+  }
+  
+  .search-container,
+  .info-text {
+    margin: 1rem 0;
+  }
+  
+  .info-text {
+    line-height: 1.6;
+    font-size: 16px;
   }
   
   .navbar {
     display: flex;
     align-items: center;
-    padding: 1rem 2rem; /* Adjust padding as needed */
-    position: fixed; /* Keep navbar fixed at the top */
+    padding: 1rem 2rem;
+    position: fixed;
     top: 0;
     width: 100%;
-    background: transparent; /* Transparent background */
-    box-sizing: border-box; /* Include padding in the element’s total width and height */
-    max-width: 1200px; /* Max width for the navbar */
-    margin: 0 auto; /* Center the navbar */
+    background: transparent;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   .navbar .logo {
-    height: 25px; /* Adjust the logo size to be smaller */
+    height: 25px;
   }
   
   .nav-links {
     display: flex;
     gap: 1rem;
-    align-items: center; /* Vertically center the menu items */
-    margin-left: auto; /* Push nav links to the right */
+    align-items: center;
+    margin-left: auto;
   }
   
   .nav-links a {
     text-decoration: none;
-    color: black; /* Text color for the menu options */
+    color: black;
     font-weight: bold;
     position: relative;
-    padding: 0.5rem; /* Add some padding for better touch targets */
+    padding: 0.5rem;
   }
   
-  /* Underline effect */
   .nav-links a::after {
     content: '';
     position: absolute;
@@ -58,121 +102,68 @@ body {
     transition: transform 0.3s ease;
   }
   
-  .nav-links a:hover::after {
-    transform: scaleX(1);
-  }
-  
-  /* Initial red underline on the first menu option */
+  .nav-links a:hover::after,
   .nav-links a:first-of-type::after {
     transform: scaleX(1);
   }
   
   .menu-toggle {
-    display: none; /* Hide the menu toggle button initially */
-    background-color: #007bff; /* Button background color */
-    color: white; /* Button text color */
+    display: none;
+    background-color: #007bff;
+    color: white;
     border: none;
     padding: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
   }
   
-  /* Responsive styles for the navbar */
   @media (max-width: 768px) {
     .navbar {
-      padding: 1rem; /* Adjust padding for smaller screens */
+      padding: 1rem;
     }
   
     .nav-links {
-      display: none; /* Hide menu options on small screens */
+      display: none;
       flex-direction: column;
       gap: 1rem;
       width: 100%;
       position: absolute;
-      top: 60px; /* Adjust based on navbar height */
+      top: 60px;
       left: 0;
-      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the menu */
-      align-items: center; /* Center items horizontally */
+      background: rgba(0, 0, 0, 0.7);
+      align-items: center;
       padding: 1rem;
-      box-sizing: border-box; /* Include padding in the element’s total width */
+      box-sizing: border-box;
     }
   
     .nav-links.menu-active {
-      display: flex; /* Show menu when active */
+      display: flex;
     }
   
     .menu-toggle {
-      display: block; /* Show menu toggle button */
+      display: block;
     }
-  }
-  @media (max-width: 320px) {
-    .navbar {
-        padding: 1rem; /* Adjust padding for smaller screens */
-      }
-      .navbar .logo {
-        height: 20px; /* Adjust the logo size to be smaller */
-        margin-left: 2px;
-      }
-      .main-content {
-        margin-top:10%; /* Adjust for navbar height */
-      }
-      .main-heading {
-        font-size: 1.25rem;
-      }
-  }
-  /* Centered Heading */
-.main-content {
-    display: flex;
-    flex-direction: column; /* Stack heading lines vertically */
-    justify-content: center;
-    align-items: center;
-    margin-top: 9.55%; /* Adjust for navbar height */
-    text-align: center; /* Center text within the div */
-    padding: 0 1rem; /* Add some padding for better alignment */
-  }
   
-  .main-heading {
-    font-size: 3.7pc;
-    color: rgb(0, 0, 0); /* Adjust text color as needed */
-    margin: 0;
-  }
-  /* Responsive Heading */
-@media (max-width: 768px) {
-    .main-heading {
-      font-size: 1.5rem; /* Smaller font size for medium screens */
+    .landing-page {
+      flex-direction: column; /* Stack columns vertically on smaller screens */
     }
-    .main-content{
-        margin-top: 20%;
+  
+    .column {
+      max-width: 100%; /* Allow full width for each column */
+    }
+  
+    .main-content {
+      margin-top: 20%;
     }
   }
   
   @media (max-width: 480px) {
     .main-heading {
-      font-size: 1.2rem; /* Smaller font size for small screens */
+      font-size: 1.2rem;
     }
-    .main-content{
-        margin-top: 20%;
+  
+    .main-content {
+      margin-top: 20%;
     }
-  }
-  .search-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    width: 100%; /* Ensure it takes full width to align centrally */
-    margin-top: 2rem; /* Space from heading */
-    position: relative;
-    z-index: 1;
-  }
-  .info-text {
-    margin-top: 2rem; /* Space above the text */
-    padding: 0 1rem; /* Horizontal padding */
-    text-align: center; /* Center the text */
-    max-width: 700px; /* Max width to ensure it doesn’t stretch too wide */
-    margin-left: auto; /* Center align with margin auto */
-    margin-right: auto; /* Center align with margin auto */
-    line-height: 1.6; /* Better line spacing for readability */
-    font-size: 16px; /* Adjust font size */
   }
   
-  .info-text p {
-    margin: 0; /* Remove default margin */
-  }
